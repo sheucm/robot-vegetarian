@@ -1,4 +1,5 @@
 import requests
+import dryscrape
 from bs4 import BeautifulSoup
 
 website = 'http://clnote.tw/'
@@ -13,5 +14,8 @@ for article in articles:
 	title = article.h1.text
 	postTime = article.span.a.text
 	content_url = article.h1.a['href']
-	content = BeautifulSoup(requests.get(content_url).text, 'html.parser')
-	
+
+	session = dryscrape.Session()
+	session.visit(content_url)
+	content = BeautifulSoup(session.body(), 'html.parser')
+	info = content.find('div',{'class':'entry-content'}).find_all('p')[-7]
