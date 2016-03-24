@@ -1,3 +1,7 @@
 beautifulsoup4==4.4.1
+dryscrape==1.0
+lxml==3.6.0
 requests==2.9.1
+webkit-server==1.0
 wheel==0.24.0
+xvfbwrapper==0.2.8
