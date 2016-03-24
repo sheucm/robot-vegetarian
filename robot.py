@@ -60,8 +60,6 @@ def robot_vegetarianStore():
 		print ("{0}\n{1}\n{2}\n{3}\n{4},{5}\n\n".format(title,publishedTime,content_url,address,lng,lat))
 		results.append((title,storeName,publishedTime,info.text,lng,lat,content_url,website))
 		
-		if idx == 1:
-			break
 	return results
 
 
