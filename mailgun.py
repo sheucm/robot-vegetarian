@@ -13,7 +13,7 @@ def send_simple_message(subject, text):
 
 if __name__ == '__main__':
 	timeStamp = ''
-	with open ('timeStamp.txt','r') as rfile:
+	with open ('/home/ubuntu/documents/robot-vegetarian/timeStamp.txt','r') as rfile:
 		timeStamp = rfile.read().split('\n')[0]
 	print (timeStamp)
 
@@ -26,8 +26,8 @@ if __name__ == '__main__':
 		if timeStamp < store[2]:
 			text += """文章標題：{7}\n店名：{0}\n{1}\n座標：{2},{3}\n發文時間：{4}\n網站來源：{5}\n臉書或blog:{6}\n\n"""\
 			.format(store[1],store[3],store[4],store[5],store[2],store[6],store[7],store[0])
-
-	send_simple_message(subject, text)
+	if len(text) > 0:
+		send_simple_message(subject, text)
 
 
 

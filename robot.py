@@ -5,6 +5,9 @@ import json
 import re
 import sys
 
+if 'linux' in sys.platform:
+	dryscrape.start_xvfb()
+
 def __is_info(p):
 	pattern = re.compile(r'(.*\n)?(.+：.+\n)+')
 	r = pattern.match(p)
@@ -26,7 +29,7 @@ def robot_vegetarianStore():
 
 
 	API_KEY = ''
-	with open('geocoding_apikey.txt','r') as rfile:
+	with open('/home/ubuntu/documents/robot-vegetarian/geocoding_apikey.txt','r') as rfile:
 		API_KEY = rfile.read().split('\n')[0]
 
 	for idx, article in enumerate(articles):
@@ -35,7 +38,7 @@ def robot_vegetarianStore():
 		content_url = article.h1.a['href']
 
 		print ("drive to article content")
-		session = dryscrape.Session()
+		session = dryscrape.Session(base_url = 'http://google.com')
 		session.visit(content_url)
 		content = BeautifulSoup(session.body(), 'html.parser')
 		p_all = content.find('div',{'class':'entry-content'}).find_all('p')
@@ -60,12 +63,14 @@ def robot_vegetarianStore():
 		print ("{0}\n{1}\n{2}\n{3}\n{4},{5}\n\n".format(title,publishedTime,content_url,address,lng,lat))
 		results.append((title,storeName,publishedTime,info.text,lng,lat,content_url,website))
 		
+		if idx == 1:
+			break		
 	return results
 
 
 if __name__ == '__main__':
 	timeStamp = ''
-	with open ('timeStamp.txt','r') as rfile:
+	with open ('/home/ubuntu/documents/robot-vegetarian/timeStamp.txt','r') as rfile:
 		timeStamp = rfile.read().split('\n')[0]
 	print (timeStamp)
 	results = robot_vegetarianStore()
