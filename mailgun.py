@@ -6,7 +6,7 @@ def send_simple_message(subject, text):
         "https://api.mailgun.net/v3/sandbox26d5624408cd4278947603488d35a53c.mailgun.org/messages",
         auth=("api", "key-6b8f571839aa0f405f77c30f847e6f09"),
         data={"from": "Vegetarian Robot <postmaster@sandbox26d5624408cd4278947603488d35a53c.mailgun.org>",
-              "to": ["st0502123@gmail.com"],
+              "to": ["st0502123@gmail.com","c1495616@gmail.com","p19920310@gmail.com"],
               "subject": subject,
               "text": text})
 
