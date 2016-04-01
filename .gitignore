@@ -2,3 +2,5 @@ ENV/
 .DS_Store
 __pycache__/
 geocoding_apikey.txt
+mailgun_apikey.txt
+emails.txt
