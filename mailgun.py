@@ -32,9 +32,9 @@ if __name__ == '__main__':
 
 
 			# Push data to lab api (instants)
-			data = {
+
 			
-		        r = requests.post('http://52.192.20.250/chat/create/robot/', data = {
+			r = requests.post('http://52.192.20.250/chat/create/robot/', data = {
 				'robot_id':'108143422899450',
 				'content':store[0],
 				'lng':store[4],
