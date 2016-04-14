@@ -1,7 +1,7 @@
 import requests
 import robot
 def send_simple_message(subject, text):
-	with open('/home/ubuntu/documents/robot-vegetarian/test_email.txt','r') as efile, \
+	with open('/home/ubuntu/documents/robot-vegetarian/emails.txt','r') as efile, \
 	     open('/home/ubuntu/documents/robot-vegetarian/mailgun_apikey.txt','r') as apifile:
 		emails = efile.read().split('\n')[:-1]
 		apikey = apifile.read().split('\n')[0]
@@ -31,9 +31,7 @@ if __name__ == '__main__':
 			newTimeStamps.append(store[2])
 
 
-			# Push data to lab api (instants)
-
-			
+			# Push data to lab api (instants)			
 			r = requests.post('http://52.192.20.250/chat/create/robot/', data = {
 				'robot_id':'108143422899450',
 				'content':store[0],
