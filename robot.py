@@ -20,7 +20,7 @@ def __extract_info(p_all):
 			result.append(p)
 	return result
 
-def robot_vegetarianStore():
+def robot_vegetarianStore(timeStamp = '2016-03-01'):
 	WEBSITE = 'http://clnote.tw/'
 	results = list()
 	req = requests.get(WEBSITE)
@@ -36,6 +36,9 @@ def robot_vegetarianStore():
 		title = article.h1.text.encode('latin1').decode('utf8')
 		publishedTime = article.span.a.find('time',{'class':'entry-date published'}).text
 		content_url = article.h1.a['href']
+
+		if publishedTime < timeStamp:
+			continue
 
 		print ("drive to article content")
 		session = dryscrape.Session(base_url = 'http://google.com')
