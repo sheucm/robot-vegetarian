@@ -19,6 +19,7 @@
 	```
 - Apply mailgun api key in its website, and put it in the mailgun_apikey.txt file. (Just copy it to the file.)
 - Apply google geocode api key, and put it in the geocoding_apikey.txt file.
+
 ## How to set crontab to scrap it routinely
 	- Install all of the requirements of python package out of the virtual environment.
 	- Get into the crontab   
