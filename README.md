@@ -21,10 +21,10 @@
 - Apply google geocode api key, and put it in the geocoding_apikey.txt file.
 
 ## How to set crontab to scrap it routinely
-	- Install all of the requirements of python package out of the virtual environment.
-	- Get into the crontab   
+- Install all of the requirements of python package out of the virtual environment.
+- Get into the crontab   
 	`crontab -e`
-	- For example, daily scrap the website.   
+- For example, daily scrap the website.   
 	`1 1 * * * python3 ~/documents/robot-vegetarian/mailgun.py`
-	- See the crontab log   
+- See the crontab log   
 	`grep CRON /var/log/syslog`

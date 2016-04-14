@@ -4,3 +4,4 @@ __pycache__/
 geocoding_apikey.txt
 mailgun_apikey.txt
 emails.txt
+test_email.txt
