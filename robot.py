@@ -37,7 +37,7 @@ def robot_vegetarianStore(timeStamp = '2016-03-01'):
 		publishedTime = article.span.a.find('time',{'class':'entry-date published'}).text
 		content_url = article.h1.a['href']
 
-		if publishedTime < timeStamp:
+		if publishedTime <= timeStamp:
 			continue
 
 		print ("drive to article content")
