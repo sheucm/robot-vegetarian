@@ -6,7 +6,7 @@
 
 ## How to run this project
 - git clone our project.
-- Install virtualenv to get create the virtual environment of python. 
+- Install virtualenv to get create the virtual environment of python.   
 	`virtualenv ENV --python=/your/python3/path/`
 - Enter the virtual mode:
 	'''
