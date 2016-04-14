@@ -33,7 +33,7 @@ def robot_vegetarianStore():
 		API_KEY = rfile.read().split('\n')[0]
 
 	for idx, article in enumerate(articles):
-		title = article.h1.text
+		title = article.h1.text.encode('latin1').decode('utf8')
 		publishedTime = article.span.a.find('time',{'class':'entry-date published'}).text
 		content_url = article.h1.a['href']
 
