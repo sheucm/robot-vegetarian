@@ -12,12 +12,12 @@ def send_simple_message(subject, text):
               	"to": emails,
               	"subject": subject,
               	"text": text})
-
+		print ("Sent mail to {0}".format(emails))
 if __name__ == '__main__':
 	timeStamp = ''
 	with open ('/home/ubuntu/documents/robot-vegetarian/timeStamp.txt','r') as rfile:
 		timeStamp = rfile.read().split('\n')[0]
-
+	print ("timestamp: {0}".format(timeStamp))
 	# store(title,storeName,publishedTime,info,lng,lat,content_url,website)
 	stores = robot.robot_vegetarianStore()
 
