@@ -40,7 +40,7 @@ def robot_vegetarianStore(timeStamp = '2016-03-01'):
 		if publishedTime <= timeStamp:
 			continue
 
-		print ("drive to article content")
+		print ("drive to article content "+content_url)
 		session = dryscrape.Session(base_url = 'http://google.com')
 		session.visit(content_url)
 		content = BeautifulSoup(session.body(), 'html.parser')
